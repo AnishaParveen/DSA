@@ -8,7 +8,6 @@ class fraction{
     fraction();
     fraction(int n,int d);
     fraction  minimization();
-    void display();
     friend fraction operator+(fraction f1,fraction f2);
     friend fraction operator-(fraction f1,fraction f2);
     friend fraction operator*(fraction f1,fraction f2);
