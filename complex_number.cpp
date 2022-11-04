@@ -9,10 +9,8 @@ class complex{
      friend complex operator-(complex c1,complex c2);
      friend complex operator*(complex c1,complex c2);
      friend bool operator==(complex c1,complex c2);
-    void output()
-    {
-        cout<<this->real<<"+"<<this->imag<<"i"<<endl;
-    }
+    friend istream& operator>>(istream &in,complex &c);
+    friend ostream& operator<<(ostream &out,const complex &c);
     
 };
 complex:: complex()
@@ -24,6 +22,17 @@ complex ::complex (int r,int i)
 {
     real=r;
     imag=i;
+}
+istream& operator>>(istream &in,complex &c)
+{
+	cout<<"enter a complex number="<<endl;
+    in>>c.real>>c.imag;
+    return in;
+}
+ostream& operator<<(ostream &out,const complex &c)
+{
+    out<<c.real<<"+i"<<c.imag<<endl;
+    return out;
 }
 complex operator+(complex c1 ,complex c2)
 {
@@ -56,14 +65,14 @@ bool  operator==(complex c1,complex c2)
 int main()
 {
     complex c1(3,4);
-    complex c2(1,4);
+    complex c2;
+    cin>>c2;
     complex c3,c4,c5;
     c3=c1+c2;
     c4=c1-c2;
     c5=c1*c2;
-    c3.output();
-    c4.output();
-    c5.output();
+    cout<<c3<<c4<<c5;
+    
     if(c1==c2)
         cout<<"numbers are equal";
     return 0;
