@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 void swap(int&,int&);
-void insertion_sort(int[],int);
+void selection_sort(int[],int);
 int main()
 {
     int n,arr[20];
@@ -18,7 +18,7 @@ int main()
         cout<<arr[i]<<",";
     }
     cout<<endl;
-    insertion_sort(arr,n);
+    selection_sort(arr,n);
     cout<<" after sorting the elements are="<<endl;
     for(int i=0;i<n;i++)
     {
@@ -35,7 +35,7 @@ void swap(int &a,int &b)
     a=b;
     b=tmp;
 }
-void insertion_sort(int arr[],int n)
+void selection_sort(int arr[],int n)
 {
     for(int j=0;j<n;j++)
     {
